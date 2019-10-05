@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+	* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header
+{
+  background-color: white;
+  width: 100%;
+  height: 15%;
+  position: absolute;
+  left: 0px;
+}
+.header > h1
+{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 50%;
+  position: relative;
+}
+.nav
+{
+  position: relative;
+  top: 5%;
+  border-color: transparent;
+  border: none;
+  font-size: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 50%;
+  z-index: 2;
+}
+.nav ul
+{
+  display: flex;
+  justify-content:flex-end;
+  max-width:700px;
+  margin: 0 auto;
+  padding:15px 15px;
+  top: 0%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height:100%;
+}
+.nav ul li
+{
+    list-style:none;
+    letter-spacing: 1px;
+    position:relative;
+    padding: 10px 10px;
+    padding-bottom: 0px;
+    margin-right: 2px;
+    //transition:0.5s;
+    box-sizing:border-box;
+    font-size: 13px;
+    font-weight: bold;
+}
+.nav > ul > li:hover
+{  
+  transition: 0.9s;
+  cursor: pointer;
+  border-bottom: 1px solid grey;
+}
+.nav ul li ul
+{
+  position :absolute;
+  left:0;
+  top: 40px;
+  padding:0 0px;
+  background-color: white;
+  display:block;
+  width:230px;
+  height:auto;
+  opacity:0;
+  visibility:hidden;
+}
+.nav ul li:hover ul
+{
+  opacity:1;
+  visibility:visible;
+  color: black;
+}
+.nav ul li ul li
+{
+  padding: 10px 0px;
+  color: #444;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: left;
+  border-bottom:1px solid grey;
+  padding-left: 10px;
+  font-weight: bold; 
+  height: 30px;
+}
+.nav ul li ul li:hover
+{
+  color: black;
+  padding-left: 20px;
+}
+.nav ul li ul li:last-child 
+{
+  border-bottom: 5px solid black;  
+}
+.center
+{
+  background-color: black;
+  width: 100%;
+  height: 78%;
+  position: absolute;
+  left: 0px;
+  top: 15%;
+}
+.button
+{
+  width: 110px;
+  text-align: center;
+  padding-top: 8px;
+  height: 30px;
+  position:relative;
+  background-color: black;
+  color: white;
+  top: 25%;
+  left: -3.5%;
+  transform: rotate(270deg);
+  z-index: 2;
+  font-weight: bold;
+  cursor: pointer;
+}
+.slideshow
+{
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 10px 10px grey; 
+}
+.mySlides  > img
+{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+}
+.footer
+{
+  background-color: white;
+  width: 100%;
+  height: 7%;
+  position: absolute;
+  top: 93%;
+  left: 0px;
+}
+.footer> h5
+{
+  width: 445px;
+  height: 100%;
+  position: absolute;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: center;
+  padding-top: 20px;
+}
+.t
+{
+  width: 300px;
+  height: 10%;
+  left: 550PX;
+  text-decoration:underline;
+  text-decoration-color: black;
+  position: absolute;
+}
+.t >p
+{
+  color: black;
+  text-align: center; 
+  font-size: 15px;
+  font-weight: bold;
+  width: 245px;
+  display: none;
+}
+.icon
+{
+  position: absolute;
+  width: 250px;
+  height: 100%;
+  left: 80.5%;
+  background-color: black;
+}
+.icon ul
+{
+  display: flex;
+  left: 0px;
+  width: 100%;
+  margin: 0 ;
+  top: 0%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height:100%;
+  padding-left: 0px;
+  background-color: white;
+  border: grey;
+}
+.icon ul li
+{
+    list-style:none;
+    position:relative;
+    padding: 10px 10px;
+    padding-bottom: 0px;
+    //transition:0.5s;
+    box-sizing:border-box;
+    border:1px solid grey;
+    width: 50%;
+    margin: 0;
+    color: black;
+}
+
+.icon ul li > i
+{
+  font-size: 20px;
+  top:50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  opacity: 0.8;
+}
+.icon ul > li:hover
+{
+  background-color: black;
+  color: white;
+}
+#pl
+{
+  display: none;
+}
+</style>
+</head>
+<body>
+ 	<div class="header">
+    	<h1>Borano</h1>
+    	<div class="nav">
+    		<ul>
+				<li>HOME
+					<ul>
+						<li>THUMBNAILS</li>
+						<li>SLIDESHOW</li>
+						<li>SLIDESHOW CONTAIN</li>
+						<li>SLIDESHOW TRANSPARENT</li>
+						<li>SLIDER</li>
+						<li>HORIZONTAL</li>
+						<li>HORIZONTAL CENTERED</li>
+						<li>KENBURNS</li>
+						<li>VIDEO</li>
+						<li>IMAGE</li>
+						<li>LANDING</li>
+						<li>GALLERY</li>
+						<li>PORTFOLIO</li>
+					</ul>
+				</li>
+				<li>PORTFOLIO
+					<ul>
+						<li>2 COLUMNS</li>
+						<li>3 COLUMNS</li>
+						<li>4 COLUMNS</li>
+						<li>FULL WIDTH</li>
+						<li>CLASS GRID</li>
+						<li>POTRAIT</li>
+						<li>WIDE</li>
+						<li>LIGHT BOX</li>
+						<li>FULL SCREEN LIGHT BOX</li>
+						<li>FILTER</li>
+						<li>PORTFOLIO VIDEO</li>
+						<li>PORTFOLIO SINGLE</li>
+					</ul>
+				</li>
+				<li>GALLERY
+					<ul>
+						<li>JUSTIFIED</li>
+						<li>JUSTIFIED FULLWIDTH</li>
+						<li>ALBUMS</li>
+						<li>ALBUMS FULLWIDTH</li>
+						<li>MASONRY</li>
+						<li>MASONRY FULLWIDTH</li>
+						<li>GRID</li>
+						<li>GRID FULLWIDTH</li>
+						<li>HORIZONTAL</li>
+						<li>HORIZONTAL CENTERED</li>
+						<li>HORIZONTAL VIDEO</li>
+					</ul>
+				</li>
+				<li>ABOUT
+					<ul>
+						<li>ABOUT US</li>
+						<li>ABOUT ME</li>
+						<li>ABOUT MINIMAL</li>
+					</ul>
+				</li>
+				<li>BLOG
+					<ul>
+						<li>BLOG FULLWIDTH</li>
+						<li>BLOG BOXED</li>
+						<li>BLOG POST</li>
+					</ul>
+				</li>
+				<li>CONTACT
+					<ul>
+						<li>CONTACT US</li>
+						<li>CONTACT ME</li>
+						<li>CONTACT MINIMAL</li>
+					</ul>
+				</li>
+				<li>BUY NOW 
+				</li>
+			</ul>
+    	</div>
+ 	</div>
+  	<div class="center">
+  			<div class="button">
+  				Dark Theme
+  			</div>
+  		<div class="slideshow">
+  			<div class="mySlides fade">
+  				<img src="i1.jpg">
+			</div>
+			<div class="mySlides fade">
+  				<img src="i2.jpg">
+			</div>
+			<div class="mySlides fade">
+  				<img src="i3.jpg">
+			</div>
+		</div>
+  	</div>
+  	<div class="footer">
+  		<h5>(b) 2016. By AchtungThemes & FastWP | Facebook | Instagram | 500px</h5>
+  			<p class="t">Like the legend of the phoenix</p>
+  			<p class="t">What keeps the planets spinning</p>
+  			<p class="t">All ends with beginnings</p>
+  		<span class="icon">
+  			<ul>
+  				<li>
+  					<i class="fa fa-chevron-left" aria-hidden="true" onclick="plusSlides(-1)"></i>
+  				</li>
+  				<li>
+  					<i class="fa fa-pause" aria-hidden="true" onclick="pause()" id="pa"></i>
+  					<i class="fa fa-play" aria-hidden="true" id="pl" onclick="play()"></i>
+  				</li>
+  				<li>
+  					<i class="fa fa-chevron-right" aria-hidden="true" onclick="plusSlides(1)"></i>
+  				</li>
+  				<li>
+  					<i class="fa fa-expand" aria-hidden="true"></i>
+  				</li>
+  			</ul>
+  		</span>
+  	</div>
+</body>
+<script type="text/javascript">
+	var slideIndex = 1;
+	showSlides(slideIndex);
+	
+	function plusSlides(n)
+	{
+  		showSlides(slideIndex += n);
+	}
+	function showSlides(n)
+	{
+  		var i;
+  		var slides = document.getElementsByClassName("mySlides");
+   		var dots = document.getElementsByClassName("t");
+   		if (n > slides.length) 
+  		{
+  			slideIndex = 1
+  		}    
+  		if (n < 1) 
+  		{
+  			slideIndex = slides.length
+  		}
+  		for (i = 0; i < slides.length; i++)
+  		{
+      		slides[i].style.display = "none";
+      		dots[i].style.display = "none";  
+  		}
+  		slides[slideIndex-1].style.display = "block";
+  		dots[slideIndex-1].style.display = "block";
+  	}
+	var a=setInterval(function(){plusSlides(1);},5000);
+	function pause()
+	{
+		clearInterval(a);
+		document.getElementById('pl').style.display="block";
+		document.getElementById('pa').style.display="none";
+	}
+	function play()
+	{
+		var a=setInterval(function(){plusSlides(1);},5000);
+		document.getElementById('pl').style.display="none";
+		document.getElementById('pa').style.display="block";
+	}
+</script>
+</html>
